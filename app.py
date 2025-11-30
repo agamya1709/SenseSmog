@@ -1,3 +1,6 @@
+import os
+st.write("Current directory:", os.getcwd())
+st.write("Files here:", os.listdir())
 
 import streamlit as st
 import numpy as np
