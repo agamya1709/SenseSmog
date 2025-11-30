@@ -1,3 +1,6 @@
+import os
+st.write("Current working directory:", os.getcwd())
+st.write("Files in directory:", os.listdir())
 import streamlit as st
 import numpy as np
 import pickle
