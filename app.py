@@ -1,6 +1,9 @@
 import streamlit as st
-import os
+import numpy as np
+import pandas as pd
 import pickle
+import os
+
 
 # DEBUG - check working directory
 st.write("Current directory:", os.getcwd())
@@ -25,9 +28,7 @@ with open(scaler_path, "rb") as f:
     scaler = pickle.load(f)
 
 
-import streamlit as st
-import numpy as np
-import pickle
+
 st.write("Current directory:", os.getcwd())
 st.write("Files here:", os.listdir())
 
