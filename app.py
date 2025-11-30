@@ -1,10 +1,35 @@
+import streamlit as st
 import os
+import pickle
+
+# DEBUG - check working directory
 st.write("Current directory:", os.getcwd())
 st.write("Files here:", os.listdir())
+
+# Define absolute file paths
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(BASE_DIR, "model.pkl")
+scaler_path = os.path.join(BASE_DIR, "scaler.pkl")
+
+# Check if files exist
+if not (os.path.exists(model_path) and os.path.exists(scaler_path)):
+    st.error("model.pkl OR scaler.pkl not found. Please upload them in the same folder.")
+else:
+    st.success("Files found successfully!")
+
+# Load model and scaler safely
+with open(model_path, "rb") as f:
+    model = pickle.load(f)
+
+with open(scaler_path, "rb") as f:
+    scaler = pickle.load(f)
+
 
 import streamlit as st
 import numpy as np
 import pickle
+st.write("Current directory:", os.getcwd())
+st.write("Files here:", os.listdir())
 
 # -----------------------------
 # Load Model & Scaler
